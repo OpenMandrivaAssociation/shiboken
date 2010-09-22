@@ -1,5 +1,5 @@
 Name: shiboken
-Version: 0.4.0
+Version: 0.5.0
 Release: %mkrel 1
 License: GPLv2
 Summary: Creates the PySide bindings source files
@@ -9,8 +9,8 @@ Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: apiextractor-devel
-BuildRequires: generatorrunner-devel >= 0.6.0
+BuildRequires: apiextractor-devel >= 0.8.0
+BuildRequires: generatorrunner-devel >= 0.6.1
 BuildRequires: python-devel
 
 %description
