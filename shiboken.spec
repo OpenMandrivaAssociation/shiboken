@@ -6,6 +6,7 @@ Summary: Creates the PySide bindings source files
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
 Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
+Patch0: shiboken-0.5.0-fix-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
@@ -61,6 +62,7 @@ Devel stuff for Shiboken Generator.
 
 %prep
 %setup -q
+%patch0 -p0
 
 %build
 %cmake
