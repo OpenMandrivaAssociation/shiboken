@@ -1,12 +1,12 @@
 Name: shiboken
-Version: 0.5.0
+Version: 0.5.1
 Release: %mkrel 1
 License: GPLv2
 Summary: Creates the PySide bindings source files
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
 Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
-Patch0: shiboken-0.5.0-fix-str-fmt.patch
+Patch0: shiboken-0.5.1-fix-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
