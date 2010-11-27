@@ -1,17 +1,19 @@
+%define beta beta1
+
 Name: shiboken
-Version: 0.5.1
-Release: %mkrel 2
+Version: 1.0.0
+Release: %mkrel -c %beta 1
 License: GPLv2
 Summary: Creates the PySide bindings source files
 Group: Development/KDE and Qt
 URL: http://www.pyside.org
-Source0:  http://www.pyside.org/files/%name-%version.tar.bz2
+Source0:  http://www.pyside.org/files/%name-%{version}~%{beta}.tar.bz2
 Patch0: shiboken-0.5.1-fix-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: apiextractor-devel >= 0.8.0
-BuildRequires: generatorrunner-devel >= 0.6.1
+BuildRequires: apiextractor-devel >= 0.9.0
+BuildRequires: generatorrunner-devel >= 0.6.3
 BuildRequires: python-devel
 
 %description
@@ -61,8 +63,7 @@ Devel stuff for Shiboken Generator.
 #------------------------------------------------------------------------------
 
 %prep
-%setup -q
-%patch0 -p0
+%setup -qn %{name}-%{version}~%{beta}
 
 %build
 %cmake
