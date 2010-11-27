@@ -28,7 +28,7 @@ PySide bindings source files from Qt headers and auxiliary files
 
 #------------------------------------------------------------------------------
 
-%define libmajor 0
+%define libmajor 1
 %define libname %mklibname %name %{libmajor}
 
 %package -n %{libname}
@@ -75,4 +75,3 @@ rm -rf %{buildroot}
 
 %clean
 rm -rf %buildroot
-
