@@ -1,4 +1,4 @@
-%define beta beta2
+%define beta beta3
 
 Name: shiboken
 Version: 1.0.0
@@ -24,6 +24,7 @@ PySide bindings source files from Qt headers and auxiliary files
 %files 
 %defattr(-,root,root,-)
 %{_bindir}/%{name}
+%{_mandir}/man1/*
 %{_libdir}/generatorrunner/shiboken_generator.so
 
 #------------------------------------------------------------------------------
