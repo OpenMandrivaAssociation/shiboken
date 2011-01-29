@@ -1,4 +1,4 @@
-%define beta beta3
+%define beta beta4
 
 Name: shiboken
 Version: 1.0.0
@@ -12,8 +12,8 @@ Patch0: shiboken-0.5.1-fix-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: apiextractor-devel >= 0.9.1
-BuildRequires: generatorrunner-devel >= 0.6.3
+BuildRequires: apiextractor-devel >= 0.9.3
+BuildRequires: generatorrunner-devel >= 0.6.4
 BuildRequires: python-devel
 
 %description
