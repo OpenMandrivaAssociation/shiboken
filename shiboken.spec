@@ -41,7 +41,7 @@ Shiboken Generator core lib.
 
 %files -n %{libname}
 %defattr(-,root,root)
-%{_libdir}/lib%{name}.so.%{libmajor}*
+%{_libdir}/lib%{name}-python%{py_ver}.so.%{libmajor}*
 
 #------------------------------------------------------------------------------
 
