@@ -1,5 +1,5 @@
 Name: shiboken
-Version: 1.0.2
+Version: 1.0.3
 Release: %mkrel 1
 License: GPLv2
 Summary: Creates the PySide bindings source files
@@ -10,8 +10,8 @@ Patch0: shiboken-0.5.1-fix-str-fmt.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: apiextractor-devel >= 0.10.2
-BuildRequires: generatorrunner-devel >= 0.6.9
+BuildRequires: apiextractor-devel >= 0.10.3
+BuildRequires: generatorrunner-devel >= 0.6.10
 BuildRequires: python-devel
 
 %description
