@@ -1,6 +1,6 @@
 Name: shiboken
 Version: 1.0.3
-Release: %mkrel 1
+Release: 2
 License: GPLv2
 Summary: Creates the PySide bindings source files
 Group: Development/KDE and Qt
@@ -65,6 +65,7 @@ Devel stuff for Shiboken Generator.
 %setup -qn %{name}-%{version}
 
 %build
+sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
 %cmake
 %make
 
