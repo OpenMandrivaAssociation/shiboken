@@ -8,8 +8,8 @@ URL: http://www.pyside.org
 Source0:  http://www.pyside.org/files/%name-%{version}.tar.bz2
 BuildRequires: cmake
 BuildRequires: qt4-devel
-BuildRequires: apiextractor-devel >= 0.10.4
-BuildRequires: generatorrunner-devel >= 0.6.11
+BuildRequires: apiextractor-devel >= 0.10.6
+BuildRequires: generatorrunner-devel >= 0.6.12
 BuildRequires: python-devel
 
 %description
