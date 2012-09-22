@@ -1,5 +1,5 @@
 Name:		shiboken
-Version:	1.1.1
+Version:	1.1.2
 Release:	1
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
@@ -9,8 +9,9 @@ Source0:	http://www.pyside.org/files/%{name}-%{version}.tar.bz2
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	python-devel
-BuildRequires:	libxml2-devel >= 2.6.32
-BuildRequires:	libxslt-devel >= 1.1.19
+BuildRequires:	pkgconfig(libxml-2.0)
+BuildRequires:	pkgconfig(libxslt)
+Obsoletes:	generatorrunner < 0.6.17
 
 %description
 The Shiboken Generator (A.K.A. shiboken) is the plugin that creates the
@@ -34,8 +35,8 @@ Since 1.1.1 it's merged with apiextractor and generatorrunner.
 %package -n %{libname}
 Summary:	Shiboken Generator core lib
 Group:		System/Libraries
-Obsoletes:	%{oldapiexlib} <= 0.10.10
-Obsoletes:	%{oldgenlib} <= 0.6.16
+Obsoletes:	%{oldapiexlib} <= 0.10.11
+Obsoletes:	%{oldgenlib} <= 0.6.17
 
 %description -n %{libname}
 Shiboken Generator core lib.
@@ -50,10 +51,10 @@ Shiboken Generator core lib.
 %package devel
 Summary:	Devel stuff for Shiboken Generator
 Group:		Development/KDE and Qt
-Requires:	%{libname} = %{version}
-Requires:	%{name} = %{version}
-Obsoletes:	%{oldapiexdev} <= 0.10.10
-Obsoletes:	generatorrunner-devel <= 0.6.16
+Requires:	%{libname} = %{version}-%{release}
+Requires:	%{name} = %{version}-%{release}
+Obsoletes:	%{oldapiexdev} < 0.10.11
+Obsoletes:	generatorrunner-devel < 0.6.17
 
 %description devel
 Devel stuff for Shiboken Generator.
