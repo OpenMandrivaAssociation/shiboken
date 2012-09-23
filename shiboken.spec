@@ -22,6 +22,7 @@ Since 1.1.1 it's merged with apiextractor and generatorrunner.
 
 %files
 %{_bindir}/%{name}
+%{py_platsitedir}/%{name}.so
 %{_mandir}/man1/*
 
 #------------------------------------------------------------------------------
