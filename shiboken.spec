@@ -1,11 +1,12 @@
 Name:		shiboken
 Version:	1.1.2
-Release:	1
+Release:	2
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
 URL:		http://www.pyside.org
 Source0:	http://www.pyside.org/files/%{name}-%{version}.tar.bz2
+Source100:	shiboken.rpmlintrc
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	python-devel
