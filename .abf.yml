@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   shiboken-1.2.1.tar.bz2: f310ac163f3407109051ccebfd192bc9620e9124
+sources:
+  shiboken-1.2.2.tar.bz2: 55731616791500750ef373f382057a43e133fa08
