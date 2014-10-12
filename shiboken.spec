@@ -1,11 +1,11 @@
 Name:		shiboken
-Version:	1.1.2
-Release:	2
+Version:	1.2.2
+Release:	1
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
 URL:		http://www.pyside.org
-Source0:	http://www.pyside.org/files/%{name}-%{version}.tar.bz2
+Source0:	http://www.pyside.org/files/Shiboken-%{version}.tar.gz
 Source100:	shiboken.rpmlintrc
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
@@ -44,7 +44,7 @@ Obsoletes:	%{oldgenlib} <= 0.6.17
 Shiboken Generator core lib.
 
 %files -n %{libname}
-%{_libdir}/lib%{name}-python%{py_ver}.so.%{libmajor}*
+%{_libdir}/lib%{name}.cpython*.so.%{libmajor}*
 
 #------------------------------------------------------------------------------
 
@@ -70,12 +70,12 @@ Devel stuff for Shiboken Generator.
 #------------------------------------------------------------------------------
 
 %prep
-%setup -q
+%setup -qn Shiboken-%{version}
 
 %build
-%__sed 's/-Wno-strict-aliasing/-fno-strict-aliasing/' -i CMakeLists.txt
-%cmake
+pushd sources/shiboken
+%cmake -DUSE_PYTHON3=True
 %make
 
 %install
-%makeinstall_std -C build
+%makeinstall_std -C sources/shiboken/build
