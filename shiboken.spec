@@ -1,12 +1,14 @@
 Name:		shiboken
 Version:	1.2.4
-Release:	1
+Release:	2
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
 URL:		http://www.pyside.org
 Source0:	https://github.com/PySide/Shiboken/archive/%{version}.tar.gz
 Source100:	shiboken.rpmlintrc
+Patch0:		1.2.2-Fix-tests-with-Python-3.patch
+Patch1:		python-3.5.patch
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
 BuildRequires:	python-devel
@@ -74,6 +76,7 @@ Devel stuff for Shiboken Generator.
 # Fix inconsistent naming of libshiboken.so and ShibokenConfig.cmake,
 # caused by the usage of a different version suffix with python >= 3.2
 #sed -i -e "/get_config_var('SOABI')/d" cmake/Modules/FindPython3InterpWithDebug.cmake
+%apply_patches
 
 %build
 %cmake -DUSE_PYTHON3=True
