@@ -11,7 +11,7 @@ Patch0:		1.2.2-Fix-tests-with-Python-3.patch
 Patch1:		python-3.5.patch
 BuildRequires:	cmake
 BuildRequires:	qt4-devel
-BuildRequires:	python-devel
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	pkgconfig(libxml-2.0)
 BuildRequires:	pkgconfig(libxslt)
 Obsoletes:	generatorrunner < 0.6.17
