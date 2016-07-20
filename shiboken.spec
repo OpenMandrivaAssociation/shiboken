@@ -1,6 +1,6 @@
 Name:		shiboken
 Version:	1.2.4
-Release:	2
+Release:	3
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
