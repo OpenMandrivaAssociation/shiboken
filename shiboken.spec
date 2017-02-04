@@ -1,6 +1,6 @@
 Name:		shiboken
 Version:	1.2.4
-Release:	3
+Release:	4
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
@@ -30,6 +30,14 @@ Since 1.1.1 it's merged with apiextractor and generatorrunner.
 
 #------------------------------------------------------------------------------
 
+%package -n python2-shiboken
+
+%files -n python2-shiboken
+%{_bindir}/%{name}-%py2ver
+%py2_platsitedir/%{name}.so
+
+#------------------------------------------------------------------------------
+
 %define libmajor 1
 %define libname %mklibname %{name} %{libmajor}
 
@@ -46,7 +54,22 @@ Obsoletes:	%{oldgenlib} <= 0.6.17
 Shiboken Generator core lib.
 
 %files -n %{libname}
-%{_libdir}/lib%{name}*python*.so.%{libmajor}*
+%{_libdir}/lib%{name}*cpython*.so.%{libmajor}*
+
+#------------------------------------------------------------------------------
+
+%define libmajor 1
+%define libname_py2 %mklibname %{name}_python2.7 %{libmajor}
+
+%package -n %{libname_py2}
+Summary:        Shiboken Generator core lib
+Group:          System/Libraries
+
+%description -n %{libname_py2}
+Shiboken Generator core lib.
+
+%files -n %{libname_py2}
+%{_libdir}/lib%{name}*python2*.so.%{libmajor}*
 
 #------------------------------------------------------------------------------
 
@@ -56,6 +79,7 @@ Shiboken Generator core lib.
 Summary:	Devel stuff for Shiboken Generator
 Group:		Development/KDE and Qt
 Requires:	%{libname} = %{version}-%{release}
+Requires:	%{libname_py2} = %{version}-%{release}
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	%{oldapiexdev} < 0.10.11
 Obsoletes:	generatorrunner-devel < 0.6.17
@@ -78,9 +102,25 @@ Devel stuff for Shiboken Generator.
 #sed -i -e "/get_config_var('SOABI')/d" cmake/Modules/FindPython3InterpWithDebug.cmake
 %apply_patches
 
+cp -a . %{py2dir}
+
 %build
+
+pushd %py2dir
+%cmake
+%make
+popd
+
 %cmake -DUSE_PYTHON3=True
 %make
 
 %install
+pushd %{py2dir}
 %makeinstall_std -C build
+mv %{buildroot}%{_bindir}/%{name} %{buildroot}%{_bindir}/%{name}-%{python2_version}
+mv %{buildroot}%{_mandir}/man1/%{name}.1 %{buildroot}%{_mandir}/man1/%{name}-%{python2_version}.1
+popd
+%makeinstall_std -C build
+
+
+
