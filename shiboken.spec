@@ -101,7 +101,7 @@ Devel stuff for Shiboken Generator.
 # Fix inconsistent naming of libshiboken.so and ShibokenConfig.cmake,
 # caused by the usage of a different version suffix with python >= 3.2
 #sed -i -e "/get_config_var('SOABI')/d" cmake/Modules/FindPython3InterpWithDebug.cmake
-%apply_patches
+%autopatch -p1
 
 cp -a . %{py2dir}
 
