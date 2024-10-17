@@ -4,7 +4,7 @@ Release:	5
 License:	GPLv2
 Summary:	Creates the PySide bindings source files
 Group:		Development/KDE and Qt
-URL:		http://www.pyside.org
+URL:		https://www.pyside.org
 Source0:	https://github.com/PySide/Shiboken/archive/%{version}.tar.gz
 Source100:	shiboken.rpmlintrc
 Patch0:		1.2.2-Fix-tests-with-Python-3.patch
